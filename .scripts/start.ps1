@@ -1,7 +1,7 @@
 $ip_address = (Get-NetIPAddress -AddressFamily IPv4 -InterfaceAlias Wi-Fi).IPAddress
 $ip_address = $ip_address.TrimStart('#') # Remove any leading '#' characters
 $hostname="hostsystem"
-$workspace_project="default"
+$workspace_project="samples"
 
 Remove-Item -Path ".env" -Force
 $line = "HOST_IP=$($ip_address)"
