@@ -15,7 +15,7 @@ services:
       # - DEFAULT_WORKSPACE=/config/workspace
       # https://mods.linuxserver.io/?mod=code-server
       - DOCKER_MODS=linuxserver/mods:code-server-python3|linuxserver/mods:code-server-extension-arguments|linuxserver/mods:code-server-docker|linuxserver/mods:code-server-powershell|linuxserver/mods:code-server-scikit-learn|linuxserver/mods:universal-git
-      - VSCODE_EXTENSION_IDS=ms-python.python|ms-python.isort|ms-toolsai.jupyter|wayou.vscode-todo-highlight|Gruntfuggly.todo-tree|ms-vscode.powershell|BeardedBear.beardedtheme
+      - VSCODE_EXTENSION_IDS=ms-python.python|ms-python.isort|ms-toolsai.jupyter|wayou.vscode-todo-highlight|Gruntfuggly.todo-tree|ms-vscode.powershell|BeardedBear.beardedtheme|streetsidesoftware.code-spell-checker|mhutchie.git-graph|DavidAnson.vscode-markdownlint|littlefoxteam.vscode-python-test-adapter|hbenl.vscode-test-explorer
     volumes:
       # workspace
       - ./codeserver/workspace:/config/workspace

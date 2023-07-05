@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 class PandasSample:
     def __init__(self):
         self.data = {

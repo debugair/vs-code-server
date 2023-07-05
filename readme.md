@@ -37,6 +37,11 @@ Once the container is up and running, you can access the vs code-server by openi
 - Gruntfuggly.todo-tree
 - ms-vscode.powershell
 - BeardedBear.beardedtheme
+- streetsidesoftware.code-spell-checker
+- mhutchie.git-graph
+- DavidAnson.vscode-markdownlint
+- littlefoxteam.vscode-python-test-adapter
+- hbenl.vscode-test-explorer
 
 To add additional extensions use the official id of the extension what can be found in vs code-server itself when you search for an extension, or if you navigate to the market place of vs code: <https://marketplace.visualstudio.com/VSCode>. Add the extension ids to the environment variable `VSCODE_EXTENSION_IDS` in the docker-compose.yml file. If you want to add more than one extension, separate the ids by a a pipe char (|).
 

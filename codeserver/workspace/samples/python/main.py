@@ -1,4 +1,5 @@
 from PandasSample import PandasSample
+
 # to use this sample you need to install the required modules first. you can do so by running the following command in the terminal:
 # pip install -r ./requirements.txt
 # or maybe with sudo
