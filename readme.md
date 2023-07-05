@@ -26,7 +26,7 @@ Inside the folder `./scripts/` are two powershell files located. One is named `s
 .\scripts\stop.ps1
 ```
 
-In the start script we try to read the IP address from the host system to add it to a hosts file with the server name `hostsystem` so that it can be reached within the container by the corresponding host name. The IP and hostname are written to the file `./codeserver/hosts` and will be mounted into the container under `/config/hosts`.
+In the start script we try to read the IP address from the host system to add it to the `.env` file. The `.env` file is used to pass environment variables to the docker-compose.yml file. The IP address and host name are added as extra host in the docker-compose.yml file. This is done to make the host system reachable from within the container. By default we use the hostname `hostsystem`.
 
 ## VS Code-Server
 

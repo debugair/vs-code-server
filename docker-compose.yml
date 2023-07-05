@@ -21,8 +21,9 @@ services:
       - ./codeserver/samples:/config/workspace/samples
       - ./codeserver/workspace:/config/workspace
       - ./codeserver/vs-code-settings.json:/config/data/User/settings.json
-      - ./codeserver/hosts:/etc/hosts:ro
       # https://docs.linuxserver.io/general/container-customization
     ports:
       - 8443:8443
+    extra_hosts:
+      - ${HOST_NAME}:${HOST_IP}
     restart: unless-stopped
