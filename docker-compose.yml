@@ -10,6 +10,7 @@ services:
       - ./codeserver/workspace/${WORKSPACE_PROJECT}:/config/workspace
       - ./codeserver/vs-code-settings.json:/config/data/User/settings.json
       # https://docs.linuxserver.io/general/container-customization
+      - ./codeserver/custom-init:/custom-cont-init.d:ro
     ports:
       - 8443:8443
     extra_hosts:
