@@ -3,23 +3,11 @@ services:
   codeserver:
     image: linuxserver/code-server:latest
     container_name: codeserver
-    environment:
-      # https://github.com/linuxserver/docker-code-server
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/Zurich
-      - PASSWORD=admin
-      #- HASHED_PASSWORD=
-      - SUDO_PASSWORD=admin
-      #- SUDO_PASSWORD_HASH=
-      # - DEFAULT_WORKSPACE=/config/workspace
-      # https://mods.linuxserver.io/?mod=code-server
-      - DOCKER_MODS=linuxserver/mods:code-server-python3|linuxserver/mods:code-server-extension-arguments|linuxserver/mods:code-server-docker|linuxserver/mods:code-server-powershell|linuxserver/mods:code-server-scikit-learn|linuxserver/mods:universal-git
-      - VSCODE_EXTENSION_IDS=ms-python.python|ms-python.isort|ms-toolsai.jupyter|wayou.vscode-todo-highlight|Gruntfuggly.todo-tree|ms-vscode.powershell|BeardedBear.beardedtheme|streetsidesoftware.code-spell-checker|mhutchie.git-graph|DavidAnson.vscode-markdownlint|littlefoxteam.vscode-python-test-adapter|hbenl.vscode-test-explorer
+    env_file:
+      - .env.codeserver
+      - .env.dbt
     volumes:
-      # workspace
-      - ./codeserver/samples:/config/workspace/samples
-      - ./codeserver/workspace:/config/workspace
+      - ./codeserver/workspace/${WORKSPACE_PROJECT}:/config/workspace
       - ./codeserver/vs-code-settings.json:/config/data/User/settings.json
       # https://docs.linuxserver.io/general/container-customization
     ports:

@@ -8,5 +8,6 @@
         "editor.codeActionsOnSave": {
             "source.organizeImports": true
         }
-    }
+    },
+    "dbt.dbtPythonPathOverride": ".venv/bin/python3"
 }

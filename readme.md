@@ -44,6 +44,8 @@ Once the container is up and running, you can access the vs code-server by openi
 - DavidAnson.vscode-markdownlint
 - littlefoxteam.vscode-python-test-adapter
 - hbenl.vscode-test-explorer
+- mtxr.sqltools
+- innoverio.vscode-dbt-power-user
 
 To add additional extensions use the official id of the extension what can be found in vs code-server itself when you search for an extension, or if you navigate to the market place of vs code: <https://marketplace.visualstudio.com/VSCode>. Add the extension ids to the environment variable `VSCODE_EXTENSION_IDS` in the docker-compose.yml file. If you want to add more than one extension, separate the ids by a a pipe char (|).
 
@@ -53,4 +55,4 @@ Per default the local file `./codeserver/vs-code-settings.json` will be mounted 
 
 ### Samples
 
-The folder `./codeserver/workspace` inside this repository will be mounted under the default workspace folder of the vs code-server container (see docker-compose.yml under volumes). This folder contains some sample files to demonstrate how to use jupyter and python inside visual studio code. Per default the location inside the container is `/config/workspace`. If you want to change the location, you can do so by changing the environment variable `DEFAULT_WORKSPACE` in the docker-compose.yml file. Don't forget to change the location in the docker-compose.yml file as well. If you add new files in visual studio code-server in your workspace folder, they automatically will end up on your local system as well. This works both ways so if you want to use your own local files just copy them into the folder `./codeserver/workspace` and they will be available inside the vs code-server container as well.
+The folder `./codeserver/workspace` inside this repository contains sub-folders that can be mounted under the default workspace folder of the vs code-server container (see docker-compose.yml under volumes). Per default the folder sample will be mounted. This folder contains some sample files to demonstrate how to use jupyter and python inside visual studio code. Per default the location inside the container is `/config/workspace`. If you want to change the location, you can do so by changing the environment variable `DEFAULT_WORKSPACE` in the docker-compose.yml file. Don't forget to change the location in the docker-compose.yml file as well. If you add new files in visual studio code-server in your workspace folder, they automatically will end up on your local system as well. This works both ways so if you want to use your own local files just copy them into the folder `./codeserver/workspace` and they will be available inside the vs code-server container as well. If you add another sub-folder in `./codeserver7workspace`that you want to mount under the default workspace path in the container you simply can change variable `$workspace_project` in the `start.ps1` file what will automatically set the value of the variable `WORKSPACE_PROJECT` in the `.env` file.
