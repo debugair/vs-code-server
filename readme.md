@@ -26,6 +26,8 @@ Inside the folder `./scripts/` are two powershell files located. One is named `s
 .\scripts\stop.ps1
 ```
 
+In the start script we try to read the IP address from the host system to add it to a hosts file with the server name `hostsystem` so that it can be reached within the container by the corresponding host name. The IP and hostname are written to the file `./codeserver/hosts` and will be mounted into the container under `/config/hosts`.
+
 ## VS Code-Server
 
 Once the container is up and running, you can access the vs code-server by opening a browser and navigate to <http://localhost:8443>. You might be asked to enter a password. The default password can be found in the docker-compose.yml file. If you want to change the password, you can do so by changing the environment variable `PASSWORD` in the docker-compose.yml file. If you need the sudo password to execute shell commands in the terminal inside the docker container, you can find it in the docker-compose.yml file as well. If you want to change the sudo password, you can do so by changing the environment variable `SUDO_PASSWORD` in the docker-compose.yml file. Per default the following vs code-extensions will be installed:
